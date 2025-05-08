@@ -8,6 +8,7 @@ import (
 	"errors"
 	"fmt"
 	"github.com/deckarep/golang-set"
+	"io"
 	"time"
 )
 
@@ -83,7 +84,7 @@ func (data *DataPackage) String() string {
 		data.GetPackageTime().Format(time.RFC3339Nano))
 }
 
-func (data *DataPackage) Read(reader *bytes.Reader) error {
+func (data *DataPackage) Read(reader io.Reader) error {
 
 	var err error
 
